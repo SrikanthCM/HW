@@ -15,14 +15,14 @@ res.end('<h1>Hello World</h1>');
 
 });
 
-app.get('/sample',function(req,res)
+app.get('/sample',function(req1,res1)
 {
 console.log("Hello ITG !!!");
-res.send("Hi This is Manoj")
+res1.send("Hi This is Manoj")
 });
 
 
-server.listen(port,() => {
+app.listen(port,() => {
 
 console.log(`Server running at port `+port);
 

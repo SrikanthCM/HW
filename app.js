@@ -15,18 +15,8 @@ res.end(' <h1><font color="red">Hello world</font></h1> ');
 
 });
 
-app.get('/sample',function(req,res)
-{
-console.log("Hello ITG !!!");
-res.send("Hi This is Manoj")
-});
-app.get('/itg',function(req,res)
-{
-console.log("Hello ITG Folks!!!");
-res.send("Hello ITG Folks!!!")
-});
 
-app.listen(port,() => {
+server.listen(port,() => {
 
 console.log(`Server running at port `+port);
 

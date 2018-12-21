@@ -1,12 +1,5 @@
 const http = require('http');
 
-var express = require('express');
-var app = express();
-var bodyParser =require('body-parser');
-app.use(bodyParser.urlencoded({extended:false}))
-app.use(bodyParser.json())
-var unirest = require('unirest');
-
 const port=process.env.PORT || 3000
 
 const server = http.createServer((req, res) => {
@@ -17,6 +10,19 @@ res.setHeader('Content-Type', 'text/html');
 
 res.end('<h1>Hello World</h1>');
 
+});
+
+var express = require('express');
+var app = express();
+var bodyParser =require('body-parser');
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+var unirest = require('unirest');
+
+app.get('/',function(req1,res1)
+{
+console.log("Hello ITG !!!");
+res1.send("Hi This is Manoj")
 });
 
 app.get('/sample',function(req1,res1)

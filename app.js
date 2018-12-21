@@ -8,23 +8,7 @@ res.statusCode = 200;
 
 res.setHeader('Content-Type', 'text/html');
 
-res.end('
-
-
-  <html>
-<body>
-
-<h2>HTML Forms</h2>
-
-
-
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-
-</body>
-</html>
-  
-
-');
+res.end('<h2>HTML Forms</h2><p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>');
 
 });
 

@@ -2,19 +2,46 @@ const http = require('http');
 
 const port=process.env.PORT || 3000
 
-const server = http.createServer((req, res) => {
+var express = require('express');
+var app = express();
+var bodyParser =require('body-parser');
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+var unirest = require('unirest');
 
-res.statusCode = 200;
-
-res.setHeader('Content-Type', 'text/html');
-
-res.end('<h1>Hello World</h1>');
-
+app.get('/',function(req,res)
+{
+console.log("Hello ITG !!!");
+res.send('<h1>Hello World</h1>')
 });
 
+app.get('/sample',function(req,res)
+{
+console.log("Hello ITG !!!");
+res.send("Hi This is Manoj")
+});
+app.get('/itg',function(req,res)
+{
+console.log("Hello ITG Folks!!!");
+res.send("Hello ITG Folks!!!")
+});
+app.post('/login',function(req,res)
+{
+	var user = req.body.username;
+	var pass = req.body.password;
+	var data = {"Message":"Your user name is " +user+" Your password is "+pass};
+	console.log("Your user name is " +user+" Your password is "+pass);
+	res.json(data)
+});
 
-server.listen(port,() => {
+app.get('/endpoint',function(req,response)
+{
+		unirest.get('https://itgfunctionappdemo.azurewebsites.net/api/HelloWorld?name='+req.query.name+'&code=Mq9fzFAsgdTBsWqho2NJw9qaxFxS//mfd78pp5kECT5Gq7EQ3yHuZw==').end(function(res){
+		response.send(res.body);
+		});
+})
 
-console.log(`Server running at port `+port);
-
+app.listen(process.env.port||process.env.PORT||3000,function()
+{
+console.log("Server is Running in port "+port)
 });

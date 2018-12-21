@@ -1,23 +1,19 @@
 {
-  "name": "supercoolnodeapp",
-  "version": "1.0.0",
-  "description": "super node app ",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
-  "dependencies": {
-    "express": "^4.16.4",
-    "unirest": "^0.5.1"
-  }
+"name": "supercoolnodeapp",
+"version": "1.0.0",
+"description": "super node app ",
+"main": "app.js",
+"scripts": {
+"start": "node app.js"
+},
+"repository": {
+"type": "git",
+"url": ""
+},
+"author": "",
+"license": "ISC",
+"bugs": {
+"url": ""
+},
+"homepage": ""
 }

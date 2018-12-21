@@ -8,7 +8,7 @@ res.statusCode = 200;
 
 res.setHeader('Content-Type', 'text/html');
 
-res.end("Hello World");
+res.end('< h1 style="color:Tomato;"> Hello World</h1>');
 
 });
 
